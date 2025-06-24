@@ -1,0 +1,82 @@
+{
+  "groups": {
+    "Network": [
+      {
+        "id": 1,
+        "name": "สมชาย ใจดี",
+        "leavedays": [
+          "2025-07-15",
+          "2025-07-20"
+        ],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 2,
+        "name": "สมหญิง รักงาน",
+        "leavedays": [
+          "2025-07-10"
+        ],
+        "restrictions": {
+          "no_weekends": true,
+          "no_weekdays": false,
+          "no_specific_days": [
+            "monday"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "name": "วิทยา เก่งเทค",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      }
+    ],
+    "Lab": [
+      {
+        "id": 4,
+        "name": "อรุณ ชำนาญ",
+        "leavedays": [
+          "2025-07-25"
+        ],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 5,
+        "name": "วันเพ็ญ เพียร",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": true,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 6,
+        "name": "กิตติ ขยัน",
+        "leavedays": [
+          "2025-07-18",
+          "2025-07-19"
+        ],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": [
+            "friday"
+          ]
+        }
+      }
+    ]
+  }
+}

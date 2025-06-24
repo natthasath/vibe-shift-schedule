@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดตารางเวรพนักงาน</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ระบบจัดตารางเวรพนักงาน</h1>
+            <p>จัดการเวรประจำวัน Network และ Lab</p>
+        </div>
+
+        <div class="controls">
+            <!-- Shift Time Configuration -->
+            <div class="shift-config">
+                <h3>
+                    <svg class="clock-icon" viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.7L16.2,16.2Z" />
+                    </svg>
+                    กำหนดช่วงเวลาอยู่เวร
+                </h3>
+                
+                <div class="time-config-grid">
+                    <div class="time-config-group">
+                        <h4>📅 จันทร์ - ศุกร์</h4>
+                        <div class="time-inputs">
+                            <span class="time-label">เริ่ม:</span>
+                            <input type="time" id="weekdayStart" class="time-input" value="16:30">
+                            <span class="time-label">ถึง:</span>
+                            <input type="time" id="weekdayEnd" class="time-input" value="18:30">
+                        </div>
+                    </div>
+                    
+                    <div class="time-config-group">
+                        <h4>🎯 เสาร์ - อาทิตย์</h4>
+                        <div class="time-inputs">
+                            <span class="time-label">เริ่ม:</span>
+                            <input type="time" id="weekendStart" class="time-input" value="08:30">
+                            <span class="time-label">ถึง:</span>
+                            <input type="time" id="weekendEnd" class="time-input" value="17:30">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="config-actions">
+                    <button class="btn-config" onclick="saveShiftConfig()">💾 บันทึกการตั้งค่า</button>
+                    <button class="btn-config" onclick="resetShiftConfig()">🔄 รีเซ็ตเป็นค่าเริ่มต้น</button>
+                    <span class="config-status" id="configStatus">✅ บันทึกสำเร็จ</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="file-input-wrapper">
+                    <input type="file" id="jsonFile" accept=".json" class="file-input" onchange="handleFileSelect(this)">
+                    <label for="jsonFile" class="file-input-button" id="fileInputButton">
+                        <svg class="file-upload-icon" viewBox="0 0 24 24">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
+                            <path d="M12,11L16,15H13V19H11V15H8L12,11Z" />
+                        </svg>
+                        เลือกไฟล์ JSON
+                    </label>
+                    <div class="file-name-display" id="fileNameDisplay"></div>
+                </div>
+                <button class="btn btn-secondary" onclick="importJSON()">Import ข้อมูลบุคลากร</button>
+                <button class="btn btn-secondary" onclick="exportSampleJSON()">ดาวน์โหลดไฟล์ตัวอย่าง</button>
+                <button class="btn btn-primary" onclick="generateSchedule()">Generate ตารางเวร</button>
+                <button class="btn btn-secondary" onclick="showWorkloadModal()">ดูสรุปภาระงาน</button>
+            </div>
+
+            <div class="stats" id="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalEmployees">0</div>
+                    <div>พนักงานทั้งหมด</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="networkCount">0</div>
+                    <div>พนักงาน Network</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="labCount">0</div>
+                    <div>พนักงาน Lab</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDays">0</div>
+                    <div>วันทำงานในเดือน</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="weekdaysCount">0</div>
+                    <div>วันธรรมดา (จ-ศ)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="weekendsCount">0</div>
+                    <div>วันหยุด (ส-อ)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalHours">0</div>
+                    <div>ชั่วโมงรวมทั้งหมด</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="avgHoursPerPerson">0</div>
+                    <div>ชั่วโมงเฉลี่ย/คน</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="networkAvgHours">0</div>
+                    <div>ชั่วโมงเฉลี่ย Network</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="labAvgHours">0</div>
+                    <div>ชั่วโมงเฉลี่ย Lab</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="avgHoursPerDay">0</div>
+                    <div>ชั่วโมงเฉลี่ย/วัน</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="coverageRate">0%</div>
+                    <div>อัตราครอบคลุมเวร</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="month-header">
+                <button class="btn btn-secondary" onclick="previousMonth()">‹ เดือนก่อน</button>
+                <h2 class="month-title" id="monthTitle"></h2>
+                <button class="btn btn-secondary" onclick="nextMonth()">เดือนถัดไป ›</button>
+            </div>
+            <div class="calendar" id="calendar"></div>
+        </div>
+    </div>
+
+    <!-- Modal for workload summary -->
+    <div id="workloadModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWorkloadModal()">&times;</span>
+            <h2>สรุปภาระงานพนักงาน</h2>
+            <div id="workloadContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
