@@ -1,0 +1,208 @@
+{
+  "groups": {
+    "Network": [
+      {
+        "id": 1,
+        "name": "ณัฐเศรษฐ์ ศักดิ์ศุภนรา",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": true,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 2,
+        "name": "กฤษณะ หล่อโลหพันธุ์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 3,
+        "name": "กสิมา  คิ้วเจริญ",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 4,
+        "name": "อัจฉราพร สาระบุตร",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 5,
+        "name": "เสริมศักดิ์ สุนทรศัพท์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 6,
+        "name": "สุรพงษ์ เนาวเศรษฐ์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 7,
+        "name": "พงศ์วิษณุ หูทิพย์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 8,
+        "name": "วรวุฒิ แสงเรือง",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 9,
+        "name": "คณาธิศ รตโนภาส",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      }
+    ],
+    "Lab": [
+      {
+        "id": 10,
+        "name": "คณิตรา แสงเรือง",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 11,
+        "name": "กฤตภาส โกศลทวิชากร",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 12,
+        "name": "ชนัญญา สารใจคำ",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 13,
+        "name": "ยศพนธ์ ธรรมรงค์รักษ์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 14,
+        "name": "อัจฉริยา เปรมเล็ก",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 15,
+        "name": "วิไลรัตน์ เชวงกฤตยานนท์",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 16,
+        "name": "สุนทรพจน์ ไทยพ่วง",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 17,
+        "name": "ภูริณัฐ มะแป้น",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 18,
+        "name": "ชิดชัย บุตแสง",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 19,
+        "name": "ธวัชชัย กาวรรณ",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      },
+      {
+        "id": 20,
+        "name": "อารี หวังปัญญา",
+        "leavedays": [],
+        "restrictions": {
+          "no_weekends": false,
+          "no_weekdays": false,
+          "no_specific_days": []
+        }
+      }
+    ]
+  }
+}
